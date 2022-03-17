@@ -1,0 +1,31 @@
+﻿@model List<MVCCURD.Models.empmodel>
+
+<h1>Employee Details</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>salary</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    @foreach(var item in Model)
+    { 
+<tr>
+    <td>@item.id</td>
+    <td>@item.Name</td>
+    <td>@item.Phone</td>
+    <td>@item.salary</td>
+    <td><button class="btn btn-success">Edit</button></td>
+    <td><a href="@Url.Action("Delete","Employee",new {item.id})" class="btn btn-danger">Delete</a></td>
+    
+</tr>
+    }
+</table>
+
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
